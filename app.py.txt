@@ -1,0 +1,17 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Backend is working!"
+
+@app.route('/api/number/random/')
+def random_numbers():
+    return jsonify([
+        {"number": "99999 88888"},
+        {"number": "70007 00007"}
+    ])
+
+if __name__ == '__main__':
+    app.run()
